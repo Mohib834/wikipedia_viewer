@@ -4,13 +4,15 @@ import Search from './model/Search';
 import {elements} from './view/base';
 import * as viewSearch from './view/viewSearch';
 
+const state = {};
+
 const controllerSearch = async () => {
     //1) Get the value from input
     const query = viewSearch.getQuery();
     if(query){
 
         //2) Make a new Search Obj with query and fetch Data
-        const search = new Search(query);
+        state.search = new Search(query);
         
         //3) Prepare Ui for Result
         //clear input value
@@ -21,10 +23,10 @@ const controllerSearch = async () => {
         viewSearch.clearResult();
         
         //4) Search the Query
-        await search.getData();
+        await state.search.getData();
 
         //5) Render Result on UI
-        viewSearch.renderResult(search.result);
+        viewSearch.renderResult(state.search.result);
 
     }
 }
@@ -32,5 +34,16 @@ const controllerSearch = async () => {
 elements.search.addEventListener('keypress', e => {
     if(e.which === 13){
         controllerSearch();
+    }
+})
+
+window.addEventListener('click', e => {
+    const btn = e.target.closest('.btn');
+
+    if(btn){
+        const gotoPage = parseInt(btn.dataset.goto,10);
+        viewSearch.clearResult();
+        window.scrollTo(0,0);
+        viewSearch.renderResult(state.search.result,gotoPage);
     }
 })
