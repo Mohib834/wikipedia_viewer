@@ -1,7 +1,8 @@
-const scss = require('../styles/style.scss');
+const main = require('../styles/style.scss');
+const loader = require('../styles/loading.scss');
 
 import Search from './model/Search';
-import {elements} from './view/base';
+import {elements,renderLoader,clearLoader} from './view/base';
 import * as viewSearch from './view/viewSearch';
 
 const state = {};
@@ -21,11 +22,14 @@ const controllerSearch = async () => {
         viewSearch.moveToTop();
         //Clear Existing results
         viewSearch.clearResult();
+        //Render Loader
+        renderLoader();
         
         //4) Search the Query
         await state.search.getData();
 
         //5) Render Result on UI
+        clearLoader();
         viewSearch.renderResult(state.search.result);
 
     }

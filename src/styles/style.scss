@@ -56,6 +56,13 @@ body{
     }
 }
 
+.loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
 .result{
     position:absolute;
     padding-bottom:5rem;
