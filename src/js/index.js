@@ -1,5 +1,6 @@
 const main = require('../styles/style.scss');
 const loader = require('../styles/loading.scss');
+// const bannerImg = require('../img/banner.jpeg');
 
 import Search from './model/Search';
 import {elements,renderLoader,clearLoader} from './view/base';

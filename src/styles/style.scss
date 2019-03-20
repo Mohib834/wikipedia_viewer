@@ -1,3 +1,8 @@
+//variables
+$color-pri-1:#41295a;
+$color-pri-2:#2F0743;
+
+
 *,
 *::before,
 *::after{
@@ -13,8 +18,7 @@ html{
 body{
     font-size:16px;
     font-family: 'Raleway', sans-serif;
-    background-image:linear-gradient(to right, #41295a,#2F0743);
-
+    background:linear-gradient(to right,rgba($color-pri-1,.9),rgba($color-pri-2,.3)),url('../img/banner.jpeg');
 }
 
 .container{
