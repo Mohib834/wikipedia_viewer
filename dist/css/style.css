@@ -112,6 +112,8 @@ body {
   top: 10%; }
 
 @media (max-width: 1200px) {
+  .container {
+    width: 100%; }
   .result-item,
   .pagination {
     width: 70%;
@@ -129,11 +131,12 @@ body {
   .pagination {
     margin-top: 12rem; }
   .search-box {
-    font-size: 20px;
-    padding: 1.5rem;
-    width: 30rem; }
+    font-size: 1rem;
+    padding: 1rem; }
+    .search-box i {
+      font-size: 1rem; }
     .search-box input {
-      font-size: 2rem;
+      font-size: 1rem;
       margin-left: 0.5rem;
       width: 100%; } }
 
