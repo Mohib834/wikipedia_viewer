@@ -140,6 +140,23 @@ body {
       margin-left: 0.5rem;
       width: 100%; } }
 
+@media (max-width: 414px) {
+  .pagination {
+    transform: translateY(253rem);
+    margin-top: 0; } }
+
+@media (max-width: 375px) {
+  .pagination {
+    transform: translateY(267rem); } }
+
+@media (max-width: 360px) {
+  .pagination {
+    transform: translateY(276rem); } }
+
+@media (max-width: 320px) {
+  .pagination {
+    transform: translateY(307rem); } }
+
 @keyframes lds-blocks {
   0% {
     background: #5699d2; }
